@@ -1,0 +1,115 @@
+<!DOCTYPE html> <!--Beskriver vilken version av HTML som används, html = HTML5-->
+<!--Början av html-->
+<html lang="sv"> <!--Säger att sidan är skriven på svenska, används för skärmläsare-->
+	<!--Början av head, det som händer i bakgrunder-->
+	<head>
+		<meta charset="UTF-8"> <!--Tekenkodning UTF-8-->
+		<title>Greatest Engineers</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1"> <!--Kompabillitet för mindre skärmar, gör sakerna större så de är lättare att se-->
+		<link href="style.css" rel="stylesheet"> <!--Länka in css dokumentet-->
+	</head>
+	<!--Början av body, det som användaren ser, sidan har id index-->
+	<body id="index">
+		<div class="gridContainer"> <!--Container för grid på hemsidan-->
+			<!--Början av header, aria landmarks banner och namn header banner-->
+			<header role="banner" aria-label="header banner">
+				<!--Början globala nav navbaren, aria landmarks navigation och namn global navigation-->
+				<nav role="navigation" aria-label="global navigation">
+					<!--Osorterad lista-->
+					<ul>
+						<!--List item-->
+						<li>
+							<a href="Nikola Tesla.html">Nikola Tesla</a> <!--Länk till Nikola Tesla.html sidan-->
+						</li>	
+						<li>
+							<a href="Thomas Edison.html">Thomas Edison</a> <!--Länk till Thomas Edison.html sidan-->
+						</li>
+					</ul>
+				</nav>
+			</header>
+			<main role="main">
+				<h1>Greatest Engineers</h1> <!--Huvudrubrik-->
+				<!--Section med information om Nikola Tesla-->
+				<section class="Nikola Tesla">
+					<!--Rubrik för sektionen-->
+					<h2>Nikola Tesla</h2>
+					<!--Bild som länkar till sidan Nikola Tesla.html-->
+					<a href="Nikola Tesla.html"><img src="Nikola.jpg" alt="Nikola Tesla"></a>
+					<p>
+					Arguably at the top of the list of greatest engineers is Nikola Tesla. He was Serbian, and moved to America at the age of 28 to work with Thomas Edison. Tesla is perhaps one of the most underrated electrical engineers, and didn’t receive credit for a lot of his inventions. There’s no doubt that he had a huge influence on society, though. His inventions include the induction motor, 3-phase electricity, fluorescent lighting and the Tesla coil. He also developed the AC current generation system made from a transformer and a motor.	
+					</p>
+				</section>
+				<!--Section med information om Thomas Edison-->
+				<section class="Thomas Edison">
+					<!--Rubrik för sektionen-->
+					<h2>Thomas Edison</h2>
+					<!--Bild som länkar till sidan Thomas Edison.html-->
+					<a href="Thomas Edison.html"><img src="Thomas Edison.jpg" alt="Thomas Edison"></a>
+					<!--Paragraf med text-->
+					<p>
+						Thomas Edison was an American inventor and referred to as a great businessman. He holds an astounding 1,097 patents, a record. He goes down as the most prolific inventor in history. A few of his many inventions include the motion picture camera and projector, the phonograph, and the incandescent lightbulb. Can you imagine life without the lightbulb?
+					</p>
+					
+				</section>
+				<!--Section med information om övriga ligor-->
+				<section class="other">
+					<!--Rubrik för sektionen-->
+					<h2>Other Engineers</h2>
+					<div>
+						<!--Delsektion för Henry Ford-->
+						<section>
+							<!--Sektionens rubrik-->
+							<h3>Henry Ford</h3>
+							<!--Paragraf med text-->
+							<p>
+								Henry Ford was an engineer and industrialist who founded the Ford Motor Company. The rest is history. Although not the inventor of the modern car, he developed assembly and production lines that brought about mass production – resulting in the first motor car that an average person could afford. As a result, he turned the automobile into something of a necessity rather than just a thing of curiosity.
+							</p>
+						</section>
+						<!--Delsektion för Archimedes-->
+						<section>
+							<!--Sektionens rubrik-->
+							<h3>Archimedes</h3>
+							<!--Paragraf med text-->
+							<p>
+								A classic scientist in the making, Archimedes was a Greek engineer, mathematician, physicist and astronomer. He has had a lasting influence in these areas, and although very little is known about the man himself, his inventions have stood the test of time and laid the foundations for many modern designs. The Archimedes screw, which can raise water efficiently, is undoubtedly the most famous.
+							</p>
+						</section>
+						<!--Delsektion för Nikolaus Otto-->
+						<section>
+							<!--Sektionens rubrik-->
+							<h3>Nikolaus Otto</h3>
+							<!--Paragraf med text-->
+							<p>
+								A German inventor, Nikolaus Otto is credited with the development of the four stroke engine. Also referred to as the Otto-cycle engine, his invention helped to initiate the development of motor cars. The same four steps of drawing in fuel and air, compressing the mixture then igniting it, and finally expelling through the exhaust is still the basis for our modern day combustion engines.
+							</p>
+						</section>
+					</div>
+				</section>
+			</main>
+			<!--Början av footer-->
+			<footer>
+				<!--Div för Copyright text-->
+				<div>
+					<p>© Copyright Abdalhakim Moaiql 2021</p>
+				</div>
+				<!--Section med sido länkar-->
+				<section>
+					<!--Osorterad lista-->
+					<ul>
+						<!--Listitem-->
+						<li>
+							<!--Länk till en sida-->
+							<a href="Nikola Tesla.html">Nikola Tesla</a>
+						</li>
+						<li>
+							<a href="Thomas Edison.html">Thomas Edison</a>
+						</li>
+						<li>
+							<a href="tips.html">Tipsa oss</a>
+						</li>
+					</ul>
+				</section>
+			</footer>
+		</div>
+	</body>
+</html>
