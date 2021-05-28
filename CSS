@@ -1,0 +1,752 @@
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=
+			GENERAL STYLING
+=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+/*CSS variables for colors and more*/
+/*Validator is outdated and is putting error on css variables but it's not a problem*/
+:root {
+	--background: rgb(219, 229, 235); /*Main background color*/
+	--header-footer-background: rgba(20, 20, 20, 0.9); /*Color for header and footer background*/
+	--button-background: rgba(150, 200, 255, 0.5); /*Background color for buttons*/
+	--button-hover-background: rgba(215, 234, 255, 0.6); /*Background color for buttons when the mouse hovers over it*/
+	--button-focus-background: rgba(177, 206, 238, 0.6); /*Background color for buttons when its in focus (clicked)*/
+	--box-background: rgba(255, 255, 255, 0.85); /*Background color for sections and other boxes*/
+	--border-radius: 6px; /*Border radius for sections and boxes*/
+	--box-shadow: 3px 3px 7px 0px rgba(0,0,0,0.5); /*Shadow for sections and boxes*/
+	--white-font: rgb(240, 240, 240); /*Color for all white text*/
+	--white-hover-font:  rgb(210, 210, 210); /*Color for all white text when the mouse hovers over it*/
+	--white-focus-font:  rgb(180, 180, 180); /*Color for all white text when its in focus (clicked)*/
+	--black-font: rgb(10, 10, 10); /*Color for all black text*/
+	--black-hover-font: rgb(40, 40, 40); /*Color for all black text when the mouse hovers over it*/
+	--black-focus-font: rgb(70, 70, 70); /*Color for all black text when its in focus (clicked)*/
+	--border: 2px solid hsl(235, 77%, 12%); /*Border style*/
+	--table-zebra-background: hsla(240, 3%, 60%, 0.8); /*Zebra stribing for tabel color*/
+}
+
+/*Custom font load*/
+@font-face {
+	font-family: "Tommy"; /*The font family name of the custom font*/
+	src: url(font/MADETOMMYRegular.otf); /*The url to the font*/
+}
+
+/*====================
+	BODY & GRID
+=====================*/
+
+/*Main body attributes that changes everything on the website*/
+body {
+	background-color: var(--background); /*Changes background color on the whole page*/
+	font-family: Tommy, 'Open Sans', Verdana, Geneva, Tahoma, sans-serif; /*Font stack with fonts to load in if the first one didn't work it goes to the next one*/
+	color: var(--black-font); /*Text color*/
+	margin: 0; /*Removes margins to the outerparts of the website*/
+}
+/*Grid container for the website*/
+.gridContainer {
+	display: grid; /*Defines to use grid*/
+	grid-template-columns: 1fr; /*How many columns the grid should be split into*/
+	grid-template-areas: /*How the areas of the grid should be sorted/located*/
+	"header"
+	"main"
+	"footer";
+	grid-gap: 15px 20px; /*The gap between the different grid areas*/
+}
+
+/*====================
+	LoVe Focus HAte
+=====================*/
+
+/*A normal link leading to a page you have not visited*/
+a:link {
+	color: blue;
+}
+/*A link leading to a page you have visited*/
+a:visited {
+	color: red;
+}
+/*The link when its in focus using the keyboard*/
+a:focus {
+	color: green;
+}
+/*The link when the mouse hovers over it*/
+a:hover {
+	color: yellow;
+}
+/*The link when its active and clicked*/
+a:active {
+	color: orange;
+}
+
+/*====================
+		HEADER
+=====================*/
+
+header {
+	grid-area: header; /*Defines the grid area "header"*/
+	background-color: var(--header-footer-background); /*Background color of the header*/
+}
+
+/*====================
+		NAV
+=====================*/
+/*The unordered list in the navbar*/
+nav ul {
+	display: flex; /*Define to use flexbox*/
+	flex-direction: row; /*Defines if the flexboxes should be in a row(-/horizontal) or in a column (|/verticaly)*/
+	padding: 0px; /*Removes the padding from the list*/
+	margin: 0px; /*Removes the margin from the list*/
+	list-style-type: none; /*Removes the dots before each item in the unordered list */
+}
+/*List items in the navbar*/
+nav li{
+	display: flex; /*Define to use flexbox*/
+	justify-content: center; /*Align the content on horizontal axis*/
+	flex: 33%; /*Lets the flexboxes grow by 33% in the defined area if possible*/
+}
+/*The text in the navbar items*/
+nav li a:not(.logo)  {
+	color: var(--white-font); /*Text color*/
+	font-weight: bold; /*Makes the text bold*/
+	text-decoration: none; /*Removes the underline from the text*/
+	padding: 10px 25px; /*Padding around the a text, 10px on the height and 25 on the width*/
+	font-size: 100%; /*Size of the font*/
+	display: flex; /*Define to use flexbox*/
+	align-items: center; /*Align the items on the vertical axis*/
+	justify-content: center; /*Align the content on horizontal axis*/
+}
+/*Attributes for the a tags in the list items in the nav bar when its in focus using the keyboard*/
+nav li a:focus:not(.logo) {
+	color: var(--white-focus-font); /*Change text color*/
+	text-decoration: underline; /*Add a underline to the link*/
+	background-color: var(--button-focus-background); /*Background color of the a tag when the mouse hovers it*/
+}
+/*Attributes for the a tags in the list items in the nav bar when the mouse hovers over*/
+nav li a:hover:not(.logo):not(.active) {
+	background-color: var(--button-hover-background); /*Background color of the a tag when the mouse hovers it*/
+	transition: background-color 0.5s; /*Fades in the background color of the buttons over 0.5 seconds in a linear motion*/
+}
+/*Attributes for the a tag that is active, it has the class active if its the current page*/
+nav li a.active {
+	background-color: var(--button-background); /*Background color of the a tag when the mouse hovers it*/
+}
+/*Main logo image "hockey fantaster" that links to the home page in the navbar list items*/
+nav li img {
+	display: flex; /*Define to use flexbox*/
+	justify-content: center; /*Align the content on horizontal axis*/
+	height: 4rem; /*The height of the image*/
+}
+
+/*====================
+		MAIN
+=====================*/
+main {
+	padding: 0px 15px; /*Padding around main so the content isn't exactly at the edge, 15px left and right while 0px up and down*/
+	grid-gap: 15px 20px;  /*Gap between the grid boxes*/
+}
+h1 {
+	grid-area: h1; /*The name of the grid area*/
+	text-align: center; /*Center the text*/
+	font-size: 2.5rem; /*Change text size*/
+	text-transform: uppercase; /*Makes the text uppercase letters*/
+}
+
+/*Same design for all sections and article boxes on all pages*/
+#index main section.nhl, #index main section.shl, #index main section.other, #league main section.teams, #league main section.middle, #league main section.standings, #league main section.highlights, #history main section, #news main article, #charts main section {
+	text-align: center; /*Align the text in the middle*/
+	padding: 25px; /*Add padding around object (inside of the border)*/
+	background-color: var(--box-background); /*Background color of the object*/
+	border-radius: var(--border-radius); /*Rounds the corners of the object*/
+	box-shadow: var(--box-shadow); /*Adds a shadow behind the object so it feels closer to the user*/
+}
+
+/*====================
+/*====================
+		FOOTER
+=====================*/
+/*Footer*/
+footer {
+	grid-area: footer; /*Defines the grid area "footer"*/
+	color: var(--white-font); /*Text color*/
+	background-color: var(--header-footer-background); /*Background color for the footer*/
+	display: grid; /*Defines to use grid*/
+	grid-template-columns: 1fr 1fr; /*Splits the grid into 2 columns*/
+	padding: 15px; /*Padding around the fotter so the content doesn't start at the edge*/
+	text-align: center; /*Aligns the text in the center*/
+}
+/*Footer unorered list*/
+footer ul {
+	list-style-type: none; /*Removes text circle ahead of each list item in the list*/
+	margin: 0px; /*Removes margins*/
+	padding: 0px; /*Removes padding*/
+}
+/*Footer a tags in the list items */
+footer li a {
+	color: var(--white-font); /*<Text color*/
+	text-align: center; /*Aligns the text in the center*/
+	font-weight: bold; /*Makes the text bold*/
+	text-decoration: none; /*Removes text underline*/
+	font-size: 1rem; /*Size of the text*/
+}
+
+/*A normal unvisited link in the footer list item*/
+footer li a:link {
+	color: var(--white-font); /*Text color*/
+	text-decoration: underline; /*Add a underline on the links*/
+}
+/*A visited link in the footer list item*/
+footer li a:visited {
+	color: lightblue; /*Text color*/
+}
+/*A link in focus using the keyboard, in the footer list item*/
+footer li a:focus {
+	color: var(--white-focus-font); /*Text color*/
+	background-color: var(--button-focus-background); /*Change the background color*/
+}
+/*Attributes for the a tags in the list items when the mouse hovers over*/
+footer li a:hover {
+	color: var(--white-hover-font); /*Text color*/
+}
+/*A active link, when its clicked, in the footer list item*/
+footer li a:active {
+	color: cyan; /*Text color*/
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=
+		PAGE SPECIFIC STYLING
+=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+/*====================
+		INDEX MAIN
+=====================*/
+/*Main*/
+#index main {
+	display: grid;
+	grid-area: main; /*Defines the grid area "main"*/
+	grid-template-areas: /*The areas where the different grid boxes/areas should be placed*/
+	"h1"
+	"nhl"
+	"shl"
+	"other";
+}
+#index main section.nhl {
+	grid-area: nhl;
+}
+#index main section.shl {
+	grid-area: shl;
+}
+#index main section.other {
+	grid-area: other;
+}
+#index main section.other div {
+	display: grid;
+	grid-template-rows: auto auto auto; /*How the rows of the grid should be splitted*/
+	grid-gap: 15px 20px; /*Gap between the different grid boxes/areas*/
+}
+#index main section.nhl img, #index main section.shl img {
+	width: 80%; /*The images is 80% of the maximum width*/
+}
+
+/*====================
+		LEAGUE MAIN
+=====================*/
+/*How the grid areas should be placed*/
+#league main {
+	display: grid;
+	grid-template-areas:
+	"h1"
+	"middle"
+	"teams"
+	"standings"
+	"highlights";
+}
+#league main section.middle {
+	grid-area: middle;
+}
+/*Change the image in the middle section*/
+#league main section.middle img {
+	width: 100%; /*Make it take 100% of the sections width*/
+	/*Normal border and radius*/
+	border: var(--border);
+	border-radius: var(--border-radius);
+}
+/*Newsbutton in the middle on the league pages*/
+#league main section.middle .newsButton {
+	color: var(--black-font); /*Change text color*/
+	text-decoration: none; /*Remove underline*/
+	background-color: var(--button-background); /*Add a background color*/
+	padding: 10px 25px; /*Add padding (inside the border)*/
+	/*Add normal border, radius and shadow*/
+	border: var(--border);
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow);
+}
+/*Change the color of the news button if the keyboard focus on it or if the mouse hovers over it*/
+#league main section.middle .newsButton:focus, #league main section.middle .newsButton:hover {
+	color: var(--black-font);
+	background-color: var(--button-hover-background);
+}
+#league main section.teams {
+	grid-area: teams;
+	text-align: center; /*Align the text in the middle*/
+}
+#league main section.teams ul {
+	display: flex;
+	justify-content: space-evenly; /*Space the items in the section evenly*/
+	flex-direction: row; /*Defines if the flexboxes should be in a row(-/horizontal) or in a column (|/verticaly)*/
+	flex-wrap: wrap; /*Put the items on another row if it overflows its available space*/
+	padding: 0px; /*Removes the padding from the list*/
+	margin: 0px; /*Removes the margin from the list*/
+	list-style-type: none; /*Removes the dots before each item in the unordered list */
+}
+#league main section.teams li{
+	display: flex; /*Define to use flexbox*/
+}
+#league main section.teams li a  {
+	color: var(--black-font);
+	text-decoration: none; /*Removes the underline from the text*/
+	padding: 5px 20px; /*Padding around the a text, 10px on the height and 25 on the width*/
+	font-size: 1rem; /*Size of the font*/
+	display: flex; /*Define to use flexbox*/
+	align-items: center; /*Align the items on the vertical axis*/
+}
+/*Attributes for the a tags in the list items in the nav bar when the mouse hovers over*/
+#league main section.teams li a:focus, #league main section.teams li a:hover {
+	background-color: var(--button-background); /*Background color of the a tag when the mouse hovers it*/
+	border-radius: var(--border-radius);
+	transition: background-color 0.5s; /*Fades in the background color of the buttons over 0.5 seconds in a linear motion*/
+}
+#league main section.teams li img {
+	padding: 0px 15px; /*0 padding up down and 15px right left*/
+	height: 35px; /*The height of the image*/
+}
+#league main section.standings {
+	grid-area: standings;
+}
+#league main section.highlights {
+	grid-area: highlights;
+}
+#league main section.highlightVideos {
+	display: flex;
+	flex-direction: row; /*Display the flex box content in a row (horizontal -)*/
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+/*Iframe with youtube videos*/
+#league main section.highlightVideos iframe {
+	flex: 25%; /*Lets the flexboxes grow by 25% in the defined area if possible*/
+	margin: 10px; /*Add margin /outside of the border*/
+	border: none; /*Remove the default border*/
+	height: 330px; /*Change the height of the videos*/
+}
+
+/*====================
+		TIPS MAIN
+=====================*/
+/*How the grid areas should be placed*/
+#tips main {
+	display: grid;
+	grid-template-areas:
+	"h1"
+	"form"
+	"thanks";
+}
+#tips main section {
+	grid-area: thanks;
+	margin: auto; /*Use auto margin to center the section in the middle*/
+	text-align: center;
+}
+/*The forms on the tips page*/
+#tips form {
+	grid-area: form;
+	text-align: center; /*Aling all text in the center*/
+}
+/*The fieldset in the form*/
+#tips form fieldset {
+	margin: 15px; /*Add some margin outside of the border*/
+	/*Use normal border and boxshadow*/
+	border-radius: var(--border-radius);
+	border: var(--border);
+	box-shadow: var(--box-shadow);
+}
+/*The legend of the fieldset in the form*/
+#tips form legend {
+	/*Bigger and bold text*/
+	font-size: 1.3rem;
+	font-weight: bold;
+}
+/*Change the style of the inputs, textareas and selects, but not the submitButton*/
+#tips form input:not(.submitButton), #tips form textarea, #tips form select {
+	padding: 5px; /*Add padding (inside the border*/
+	margin: 5px; /*Add margin (outside the border*/
+	border-radius: var(--border-radius); /*Round the border corners*/
+}
+/*Change the form inputs background color when they are in focus
+with the keyboard, but not the submitButton*/
+#tips form input:focus:not(.submitButton) {
+	background-color: var(--button-focus-background);
+}
+/*Change the textarea size and add some margin*/
+#tips form textarea {
+	width: 95%;
+	height: 15rem;
+	margin-top: 10px;
+}
+/*For all optional things in the form, but not the submitbutton*/
+#tips form :optional:not(.submitButton) {
+	background: linear-gradient(90deg,rgba(255,255,255,1) 20%, rgba(202,246,255,1) 100%); /*Add a white to lightblue gradient*/
+}
+/*For all requred things in the form, but not the submitbutton*/
+#tips form :required:not(.submitButton) {
+	background: linear-gradient(90deg,rgba(255,255,255,1) 50%, rgb(214, 216, 255) 100%); /*Add a white to blue gradient*/
+}
+/*Change the style of the submitbutton*/
+#tips form input[type=submit] {
+	background-color: #4CAF50; /*Change background color*/
+	color: var(--white-font); /*Font color*/
+	font-size: 1rem; /*Font size*/
+	text-decoration: none; /*Remove underline*/
+	padding: 5px;
+	margin: 4px 2px;
+	/*width and height changes for the button*/
+	width: 5rem;
+	height: 3rem;
+	/*Normal border radius and shadow*/
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow);
+	cursor: pointer; /*Make the cursor show the pointer (click) when it goes over the button*/
+}
+/*Change the background color of the submitbutton when its in foucs using the keyboard*/
+#tips form input[type=submit]:focus {
+	background-color: rgb(30, 71, 32);
+}
+/*Change the background color of the submitbutton when the mouse hovers over it*/
+#tips form input[type=submit]:hover {
+	background-color: rgb(51, 136, 54);
+}
+
+/*Inline svg*/
+#tips svg {
+	margin: auto; /*Use auto margin to center the svg in the middle*/
+	padding: 8ex; /*Add padding around the svg*/
+	/*Animate the smiley with the smileyMovement animation for 7.5 seconds, infinite amount of times*/
+	animation: smileyMovement 7.5s infinite;
+	width: 200px; /*Width of the svg*/
+	height: 200px; /*Height of the svg*/
+}
+/*Yellow fill for face in the smiley svg*/
+#tips svg .svgFace {
+	fill: yellow; /*Fill color*/
+	/*Validator is outdated and is putting error on cx and cy but it's not a problem*/
+	cx: 100; /*X coordinate of a svg object*/
+	cy: 100; /*Y coordinate of a svg object*/
+}
+/*Black fill for eyes in the smiley svg*/
+#tips svg .svgEye {
+	fill: black; /*Fill color*/
+	cy: 65; /*Y coordinate of a svg object*/
+}
+/*Left eye in the smiley svg*/
+#tips svg .svgLeftEye {
+	cx: 60; /*X coordinate of a svg object*/
+}
+/*Right eye in the smiley svg*/
+#tips svg .svgRightEye {
+	cx: 140; /*X coordinate of a svg object*/
+}
+/*Black stroke for mouth in the smiley svg*/
+#tips svg .svgMouth {
+	stroke: black; /*Stroke color*/
+	stroke-width: 10px; /*Width of the stroke*/
+	fill: none; /*Fill color*/
+}
+
+/*Animation or the movement of the smiley svg*/
+@keyframes smileyMovement {
+	/*Start and end of the animation*/
+	0%, 100% {
+		vertical-align: 0vh; /*Start of with 0 vertical alignment*/
+		transform: rotate(0deg); /*Start with 0 rotation*/
+	}
+	/*Half way through the animation*/
+	50% {
+		vertical-align: 5vh; /*Move the vertical alignment to 5vh*/
+		transform: rotate(360deg); /*Rotate the smiley 360 degrees to the right*/
+	}
+}
+/*Affect a p tag that is a sibling to an adress element
+and add the content after the a tag*/
+#tips main address ~ p a::after {
+	content: ", MER HOCKEY!"; /*Content to add after the a tag*/
+}
+/*The html video*/
+#tips video {
+	width: 80%;
+	border: var(--border);
+	border-radius: var(--border-radius);
+}
+/*Adress section with mail, phonenumber and adress*/
+#tips address {
+	text-align: left;
+}
+/*Change the desciptionlist in the adress section*/
+#tips address dl {
+	margin: auto; /*Use auto margin to center the desciptionlist in the middle*/
+	width: 60%; /*Change the width*/
+	/*Add normal background color boxshadow and border radius*/
+	background-color: var(--box-background);
+	box-shadow: var(--box-shadow);
+	border-radius: var(--border-radius);
+	padding: 1.5em; /*Add some padding inside of the border*/
+}
+/*====================
+	HISTORY MAIN
+=====================*/
+
+/*How the grid areas should be placed*/
+#history main {
+	display: grid;
+	grid-template-areas: 
+	"h1"
+	"past"
+	"future";
+}
+
+/*Give the sections their grid area name*/
+#history main .past {
+	grid-area: past;
+}
+#history main .future {
+	grid-area: future;
+}
+
+/*Make the first letter in the p tags in main get a bigger font size*/
+#history main p::first-letter {
+	font-size: 2.5ex;
+}
+
+/*Make the first row in the p tags in main be bold*/
+#history main p::first-line {
+	font-weight: bold;
+}
+
+/*Style the image that are adjacent sibling to a p tag*/
+#history main p + img {
+	width: 80%; /*Change image width*/
+	/*Add normal border and radius*/
+	border: var(--border);
+	border-radius: var(--border-radius);
+	margin: 10px; /*Add margin (outside of the border)*/
+}
+
+/*====================
+		NEWS MAIN
+=====================*/
+/*How the grid areas should be placed*/
+#news main {
+	display: grid;
+	grid-template-areas: 
+	"h1"
+	"article1"
+	"article2"
+	"article3"
+	"article4";
+}
+
+/*Give the sections their grid area name*/
+#news main article:nth-child(2) { /*Get the second child of the section, the <h1> is the first child*/
+	grid-area: article1;
+}
+#news main article:nth-child(3) { /*Get the thrid child of the section*/
+	grid-area: article2;
+}
+#news main article:nth-child(4) { /*Get the forth child of the section*/
+	grid-area: article3;
+}
+#news main article:nth-child(5) {
+	grid-area: article4;
+}
+
+/*Change the width of the image and add the normal border*/
+#news main article img {
+	width: 75%;
+	border: var(--border);
+	border-radius: var(--border-radius)
+}
+#news main article ul {
+	list-style-type: none; /*Remove the dots before each list item in the list*/
+}
+
+/*====================
+		CHARTS MAIN
+=====================*/
+
+/*How the grid areas should be placed*/
+#charts main {
+	display: grid;
+	grid-template-areas: 
+	"h1"
+	"goals"
+	"pass"
+	"penalties"
+	"plusminus"
+	"powerplay"
+	"boxplay";
+}
+
+/*Give the sections their grid area name*/
+#news main section:nth-child(2) { /*Get the second child of the section, the <h1> is the first child*/
+	grid-area: goals;
+}
+#news main section:nth-child(3) { /*Get the thrid child of the section*/
+	grid-area: pass;
+}
+#news main section:nth-child(4) { /*Get the forth child of the section*/
+	grid-area: penalties;
+}
+#news main section:nth-child(5) {
+	grid-area: plusminus;
+}
+#news main section:nth-child(6) {
+	grid-area: powerplay;
+}
+#news main section:nth-child(7) {
+	grid-area: boxplay;
+}
+
+/*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=
+			MEDIA QUERIES
+=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*/
+
+/*====================
+		/*TABLETS
+====================*/
+
+/*Changes how some things should be showed if the
+screen is wider than 700 pixels*/
+@media only screen and (min-width: 700px) {
+
+	/*GENERAL
+	===========*/
+	/*Make the nav text size bigger*/
+	nav li a:not(.logo)  {
+		font-size: 1.75rem;
+	}
+	/*Make the nav image taller*/
+	nav li img {
+		height: 6rem; /*The height of the image*/
+	}
+	
+	/*INDEX
+	===========*/
+	/*Change how the grid areas should be placed*/
+	#index main {
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas:
+		"h1 h1"
+		"nhl shl"
+		"other other";
+	}
+	
+	/*CHARTS
+	===========*/
+	/*Change how the grid areas should be placed*/
+	#charts main {
+		grid-template-areas: 
+		"h1 h1"
+		"goals pass"
+		"penalties plusminus"
+		"powerplay boxplay";
+	}
+}
+
+/*====================
+	/*PV & TV
+====================*/
+
+/*Changes how some things should be showed if the
+screen is wider than 1200 pixels*/
+@media only screen and (min-width: 1200px) {
+
+	/*INDEX
+	===========*/
+	/*Change how the grid areas should be placed
+	and add a background image*/
+	#index main {
+		grid-template-columns: 1fr 17.5rem 1fr;
+		grid-template-areas:
+		"nhl h1 shl"
+		"other other other";
+		background-image: url(images/atlantic.png); /*background image*/
+		background-repeat: no-repeat; /*The background image should not repeat*/
+		background-position: center; /*Place the background image in the center of the area*/
+		background-size: cover; /*Make the background image cover the whole area*/
+	}
+	/*Change how the rows and columns of the grid
+	should be split, and how many there should be*/
+	#index main section.other div {
+		grid-template-rows: 1fr;
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+
+	/*LEAGUE
+	===========*/
+	/*Change how the grid areas should be placed
+	and how the columns should be splitted*/
+	#league main {
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-areas:
+		". h1 ."
+		"standings middle teams"
+		"highlights highlights highlights"
+	}
+	
+	/*TIPS
+	===========*/
+	/*Change how the grid areas should be placed*/
+	#tips main {
+		grid-template-areas:
+		"h1 h1 h1"
+		". form ."
+		". thanks .";
+	}
+	/*Change the width of the video*/
+	#tips video {
+		width: 39%;
+	}
+	/*Change the width of all dl children of adress*/
+	#tips address > dl {
+		width: 30%;
+	}
+	
+	/*HISTORY
+	===========*/
+	/*Change how the grid areas should be placed
+	and how the columns should be splitted*/
+	#history main {
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas: 
+		"h1 h1"
+		"past future";
+	}
+
+	/*NEWS
+	===========*/
+	/*Change how the grid areas should be placed
+	and how the columns should be splitted*/
+	#news main {
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas: 
+		"h1 h1"
+		"article1 article2"
+		"article3 article4";
+	}
+	
+	/*CHARTS
+	===========*/
+	/*Change how the grid areas should be placed*/
+	#charts main {
+		grid-template-areas: 
+		"h1 h1 h1"
+		"goals pass penalties"
+		"plusminus powerplay boxplay";
+	}
+}
