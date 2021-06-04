@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title> Thomas Edison </title>
+</head>
+<body>
+
+
+
+<header class="main-head">
+    <section > 
+        <nav class="main-nav" > <!--Navigations baren. Här Har gjort att denna naven ska vara global alltså att den ska finnas på alla sidor-->
+            <ul> <!--För att kunna gör en nav så måste man göra in lista, Här har jag valt att göra unsorted list, det går välja vilken lista som helst så länge man ta bort det som följer med, i mitt fall är det punkter-->
+                <li> <a href="index.html">Ingenjörerna</a></li> <!--En rad i listan men den kommer att synas som en block, det fixas med css, Kommentaren kommer att finnas tillänglig där. href arttibitet är om man vill lägga en länk och i mitt fall kommer det att bli startsidan  -->
+                <li> <a href="Tesla.html">Nikola Tesla</a></li>
+                <li> <a class="active" href="Edison.html"> Thomas Edison </a></li> <!-- Thomas Edison sida som har en länk och som är rad i sort av en lista för naven men som kommer att vara inline i cssen -->
+                <li> <a href="Arkimedes.html"> Arkimedes </a> </li> <!-- Arkimedes sida som har en länk och som är rad i sort av en lista för naven men som kommer att vara inline i cssen-->
+                <li id="höger" > <a href="Kontakt.html"> Kontakt </a> </li> <!-- Kontakt sida som har en länk och som är rad i sort av en lista för naven men som kommer att vara inline i cssen. Id arttibuten är för endast denna länken kommer att vara längs till höger-->
+            </ul>
+            </nav>
+    </section>
+    <section class="hedi">
+        <section>
+            <h1 class="edi"> Thomas Edison </h1>
+        </section>
+    </section>
+</header>
+<div class="index"> <!-- Denna stycket har jag gjort för att jag ska kunna göra en grid display, den kommer att täcka hela bodyen-->
+    <section class="content1">
+        <h2>Bakgrund</h2>
+            <p>Thomas Alva Edison är en av de mest berömda uppfinnarna i historien. Han gjorde 2500 uppfinningar och fick inte mindre än 1093 patent. Hans uppfinningar förändrade människornas liv under slutet av 1800- och i början av 1900-talet. Edison föddes 1847 i staden Milan i Ohio, USA.</p>
+    </section>
+    <section class="bild1">
+        <img src="Thomas Edison.jpg" alt="Thomas Edison">
+    </section>
+        
+    <section class="content2">
+		<h2>Känd För</h2>
+        <table>
+            <tr>
+                <th>Uppfinning</th>
+                <th>När (år)</th>
+                <th>Var</th>
+            </tr>
+            <tr>
+                <td>Fonografen</td>
+                <td>1877</td>
+                <td>USA</td>
+            </tr>
+            <tr>
+                <td>Glödlampan</td>
+                <td>1879</td>
+                <td>USA</td>
+            </tr>
+            <tr>
+                <td>Flimen</td>
+                <td>1895</td>
+                <td>USA</td>
+            </tr>
+        </table> 
+    </section>
+    <section class="bild2">
+        <img src="Glödlampa.jpg" alt="Glödlampan">
+    </section>
+</div>
+
+
+<footer class="main-footer">
+    <ul>
+          <li> <a href="Edison.html"> Thomas Edison </a></li>
+          <li> <a href="Arkimedes.html"> Arkimedes </a> </li>
+          <li> <a href="Kontakt.html"> Kontakt </a> </li>
+      </ul>
+</footer>
+
+
+</body>
+</html>
