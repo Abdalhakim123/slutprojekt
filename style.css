@@ -218,6 +218,13 @@ img{
 
 }
 
+.videon{
+	grid-column: 2;
+  place-self: center;
+  object-fit: fill;
+
+}
+
 
 iframe{ /* Här har jag spediferat hur mycket videon ska vara stor och lagt till en filter */
   width: 45vw;
