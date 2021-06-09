@@ -18,6 +18,7 @@
         </ul>
     </nav>
 </header>
+<main>
 <section>
     <section> <br><br> <!--Br är radbrytning för att det var svårt och får ner header-->
         <h1> Ingenjörerna  <br><br><img class="runda-hörn" src="Ingenjör.jpg" alt="Logga"><br><br><br><br></h1>
@@ -43,12 +44,17 @@
             <label for="Kvinna">Kvinna</label> 
             <input type="radio" id="annat" name="kon" value="annat">
             <label for="annat">annat</label> <br><br>
-            <label for="mejladress">Mejladress</label> <br><br>
-            <input class="textfält" type="text" name="mejladress" id="mejladress"> <br><br>
-            <label for="Telefonnummer">Telefonnummer</label> <br><br>
-            <input class="textfält" type="text" name="Telefonnummer" id="Telefonnummer"> <br> <br>
+            <form>
+			<label for="email">Mailadress:</label>
+			<input type="email" id="email" name="email" placeholder="exempl@gmail.com">
+			</form>
+            <form>
+			<label for="phone">Telefonnummer:</label>
+			<input type="tel" id="phone" name="phone" placeholder="123-45-678"><br><br>
+			</form>
         </fieldset> <br> <br>
-        <fieldset>
+        <form action="index.html">
+		<fieldset>
             <legend>Meddelande</legend>
             <label for="angaende"> Meddelandet angående </label> <br> <br>
             <input type="checkbox" id="val1" name="låtar" value="val">
@@ -58,10 +64,12 @@
             <label for="Beskrivning">Beskrivning</label> <br> <br>
             <textarea name="Beskrivning" id="Beskrivning" cols="30" rows="10"></textarea> <br> <br><br> <br> <!--Detta är en kanpp som summerar ihop och tar till en annan hemsida-->
         </fieldset> <br> <br>
-        <button type="submit"> Skicka </button>
-    </section>
+        <input type="submit"></input>
+		</form>
+	</section>
 </section>
 </div>
+</main>
 
     
 
