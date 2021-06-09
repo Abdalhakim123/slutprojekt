@@ -7,8 +7,12 @@
     <title> Ingenjörarna </title> <!--Title som ska se ut på fliken-->
 </head>
 <body>
-    <header class="main-head"> <!--Detta är header för alla hemsidor som är allra längst upp i hemsidan-->
-        <nav class="main-nav" > <!--Navigations baren. Här Har gjort att denna naven ska vara global alltså att den ska finnas på alla sidor-->
+    <header> <!--Detta är header för alla hemsidor som är allra längst upp i hemsidan-->
+        <h1>Ingenjörarna</h1>
+    </header>
+	
+	<main>
+		<nav class="main-nav" > <!--Navigations baren. Här Har gjort att denna naven ska vara global alltså att den ska finnas på alla sidor-->
             <ul> <!--För att kunna gör en nav så måste man göra in lista, Här har jag valt att göra unsorted list, det går välja vilken lista som helst så länge man ta bort det som följer med, i mitt fall är det punkter-->
                 <li> <a class="active" href="index.html">Ingenjörarna</a></li> <!--En rad i listan men den kommer att synas som en block, det fixas med css, Kommentaren kommer att finnas tillänglig där. href arttibitet är om man vill lägga en länk och i mitt fall kommer det att bli startsidan / classen active är när jag är på hemsidan så visas sidan som är aktic -->
                 <li> <a href="Tesla.html">Nikola Tesla</a></li> <!-- Nikola Tesla sida som har en länk och som är rad i sort av en lista för naven men som kommer att vara inline i cssen -->
@@ -18,13 +22,6 @@
                     
             </ul>
         </nav>
-    </header>
-	<main>
-    <section class="hIndex Header"> <!-- Section är sektion och detta är för dla informationen i olika delar, JAg har klasserat den för  att den ska få egen stil-->
-        <section>
-        <h1 class="ingenjör"> Ingenjörerna </h1> <!--H1 tagge är en huvudrubrik-->
-        </section> <!--Sluttagen för section-->
-    </section>
    
     <div class="index"> <!-- Denna stycket har jag gjort för att jag ska kunna göra en grid display, den kommer att täcka hela bodyen -->
     
@@ -32,18 +29,25 @@
             <h2>Nikola Tesla</h2> <!--h2 är en en huvudrubrik men som är mindre h1-->
             <p>Förmodligen högst upp på listan över de största ingenjörerna är Nikola Tesla. Han var serbisk och flyttade till Amerika vid 28 års ålder för att arbeta med Thomas Edison. Tesla är kanske en av de mest underskattade elingenjörerna och fick inte kredit för många av hans uppfinningar. Det råder dock ingen tvekan om att han hade ett stort inflytande på samhället. Hans uppfinningar inkluderar induktionsmotorn, 3-fas el, lysrör och Tesla-spolen. Han utvecklade också växelströmsgenereringssystemet tillverkat av en transformator och en motor.</p> <!--Detta är paragraf -->
         </section>
-        <section class="bild1"> <!--Denna klassen är för att lägga till bilden på rad1 -->
-            <img src="Nikola Tesla.jpg" alt="Nikola Tesla">
-        </section>
+        <!--Denna klassen är för att lägga till bilden på rad1-->
+		<p> 
+            <img src="NikolaTesla.jpg" alt="Nikola Tesla">
+        </p>
 
         <section class="content2">
                 <h2>Thomas Edison</h2>
                 <p>Thomas Edison var en amerikansk uppfinnare och kallades en stor affärsman. Han har förbluffande 1 097 patent, ett rekord. Han går ner som den mest produktiva uppfinnaren i historien. Några av hans många uppfinningar inkluderar filmkamera och projektor, fonografen och glödlampan. Kan du föreställa dig livet utan glödlampan?</p>
         </section>
-        <section class=" bild2">
-                <img src="Thomas Edison.jpg" alt="Thomas Edison">
-        </section>
+        
+		<p class=" bild2">
+                <img src="ThomasEdison.jpg" alt="Thomas Edison">
+        </p>
     </div>
+	
+		<video controls="">
+		<source src="movie.mp4" type="video/mp4">
+		</video>
+	
 	</main>
 
 
