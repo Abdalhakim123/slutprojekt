@@ -17,6 +17,15 @@ a { /*Detta stylen är för länkar */
   
 }
 
+header{
+	display:grid;
+	grid-area:header;
+	background-color: darkgray;
+	color: white;
+	text-align:center;
+}
+
+
 .main-nav {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /*Detta är vilken textstill för innehållet, Ordningen är från den minst tillgänglig till högst tilängnlig */
 }
@@ -38,6 +47,18 @@ a { /*Detta stylen är för länkar */
   transition-duration: 0.5s; /*Detta är hur mycet tid som tar för att visa upp de , detta fungerar som animation*/
   z-index: 1; /*Denna funktionen används för att jag hade probelem  med att drop down menyn kommer under innehållet,  men med hjälp av denna funktionen så  kan man  lägga det man  vill överst*/
   font-size: 20px;
+  
+}
+
+video{
+	
+	height: 240px;
+	width: 350px;
+}
+
+nav li:hover{
+	border:4px inset #4d3319;	
+	
 }
 .active{ /*Detta är classen när hemsidan aktiv så får den en specifk fäärg*/
   background-color: rgb(255, 255, 255, 0.65);
@@ -79,11 +100,8 @@ ul li ul:hover {
 .main-nav li ul li:hover{ /*Detta om man håller äver på dropsoen menyn */
   background-color: rgb(192, 192, 192);
 }
-h1{
-  text-align: center;
-  height: 45vh;
-  margin: 0 ;
-}
+
+
 
 
 
@@ -93,7 +111,17 @@ h1{
   
 }
 
+#andra{
+  display: grid; /* Vilken typ av stil jag kommer att använda och deet är grid*/
+  grid-gap: 4em; /*Dett är hur mycket mellanrum mellan sektionerna*/
+  margin: 0;  /*hur mycket från mellanrum från aknten */
+  padding-bottom: 10rem; /* Här hur mycket mellan rum till botten och mitt fall är fottern*/
+  width: 100%;
+}
 
+artickel{
+	
+}
 
   /*---------------------- Header ----------------------*/
 .main-head {
@@ -123,10 +151,8 @@ h1{
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  
+} 
 
-
-}
 /*---------------------- Grid instälningar för index, Edison, Arkimedes   ----------------------*/
 .index{ /*. Är tilläg till classer */
   display: grid; /* Vilken typ av stil jag kommer att använda och deet är grid*/
@@ -146,13 +172,10 @@ padding: 2em 3em;
 place-self: center;
 
 }
-.bild1{
+img{
   grid-column: 3;
   grid-row: 1;
   padding: 2em;
-  place-self: center;
-  
-
 }
 
 
@@ -218,9 +241,8 @@ img{
 
 }
 
-.videon{
+iframe{
 	grid-column: 3;
-  place-self: center;
   object-fit: fill;
 
 }
@@ -245,10 +267,10 @@ table, th, td{ /*Grupp selektorer för tabellen och huvuruvriker och under rubik
 /*-----------------------  kontakt hemsidan Instälningar  -----------------------------------*/
 .formular{ /*Detta är instälningar för formularet, där alla items ska vara placerade i mitten*/
   display: grid;
-  place-items: center;
   padding: 12rem;
   text-align: center;
 }
+
 legend{ /*Legende är huvudrubrik på en fieldset kan man säga */
   place-self: left;
   padding: 1em 2em;
@@ -256,11 +278,13 @@ legend{ /*Legende är huvudrubrik på en fieldset kan man säga */
   border-radius: 30px;
   font-size: 1.5rem;
 }
+
 .Kontakt{
   padding: 10rem;
   place-self: center;
   padding-bottom: 10rem;
 }
+
 .textfält{
   border-radius: 5px;
   background-color: #757575ef;
